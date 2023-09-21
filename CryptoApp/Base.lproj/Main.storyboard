@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,32 +13,43 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iBv-CI-16u">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemCyanColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" systemColor="systemCyanColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="awK-UU-9rH">
+                                <rect key="frame" x="0.0" y="34" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1AU-v5-DhT"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iBv-CI-16u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="19s-cv-jL7"/>
-                            <constraint firstItem="iBv-CI-16u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bxf-qQ-5bh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iBv-CI-16u" secondAttribute="trailing" id="H0J-03-bf1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iBv-CI-16u" secondAttribute="bottom" id="pHD-8o-YIg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iBv-CI-16u" secondAttribute="bottom" id="2pa-1P-MRu"/>
+                            <constraint firstItem="awK-UU-9rH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CGY-b9-e4F"/>
+                            <constraint firstItem="iBv-CI-16u" firstAttribute="top" secondItem="awK-UU-9rH" secondAttribute="bottom" id="PxC-kr-h1B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iBv-CI-16u" secondAttribute="trailing" id="aH7-MP-ugF"/>
+                            <constraint firstItem="iBv-CI-16u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="akJ-v4-VTr"/>
+                            <constraint firstItem="awK-UU-9rH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="34" id="oih-PE-6Ml"/>
+                            <constraint firstItem="awK-UU-9rH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="trk-cS-tn4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="awK-UU-9rH" id="tb4-di-rDT"/>
                         <outlet property="tableView" destination="iBv-CI-16u" id="r7f-U9-bVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
+            <point key="canvasLocation" x="56.799999999999997" y="-2.2167487684729066"/>
         </scene>
     </scenes>
     <resources>
