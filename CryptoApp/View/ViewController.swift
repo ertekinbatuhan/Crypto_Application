@@ -24,9 +24,15 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        getData(url: self.url!)
         
+    }
+    
+    
+    func getData(url : URL) {
+    
         let session = URLSession.shared
-        let task = session.dataTask(with: url!) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             
             if error != nil {
                 
@@ -64,9 +70,8 @@ class ViewController: UIViewController {
             
         }
         task.resume()
-        
+                
     }
-
 
 }
 
@@ -81,17 +86,12 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
             return cryptoArray.count
         }
         
-        
-       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell =  UITableViewCell()
         var content = cell.defaultContentConfiguration()
-        
-       
-        
         
         cell.layer.cornerRadius = 20
         cell.backgroundColor = .systemGreen
