@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     let url = URL(string:"http://data.fixer.io/api/latest?access_key=798c8fae3cd7d13011fca8fa483039f3")
     var cryptoArray  : [Crypto] = [Crypto] ()
-    var searchList  : [Crypto] = [Crypto] ()
+    var searchArray  : [Crypto] = [Crypto] ()
     
     var isSearching = false
   
@@ -75,7 +75,7 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         
         if isSearching {
             
-            return searchList.count
+            return searchArray.count
             
         } else  {
             return cryptoArray.count
@@ -100,8 +100,8 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         cell.layer.borderColor = CGColor(gray: 5, alpha: 5)
         
         if isSearching {
-            content.text = searchList[indexPath.row].cryptoName
-            content.secondaryText = String(searchList[indexPath.row].cryptoPrice)
+            content.text = searchArray[indexPath.row].cryptoName
+            content.secondaryText = String(searchArray[indexPath.row].cryptoPrice)
         } else {
             content.text = cryptoArray[indexPath.row].cryptoName
             content.secondaryText = String(cryptoArray[indexPath.row].cryptoPrice)
@@ -128,7 +128,8 @@ extension ViewController : UISearchBarDelegate {
                   isSearching = false
                } else {
                    isSearching = true
-                   searchList = cryptoArray.filter({$0.cryptoName.lowercased().contains(searchText.lowercased())})
+                   // Add Data 
+                   searchArray = cryptoArray.filter({$0.cryptoName.lowercased().contains(searchText.lowercased())})
                }
                
         tableView.reloadData()
