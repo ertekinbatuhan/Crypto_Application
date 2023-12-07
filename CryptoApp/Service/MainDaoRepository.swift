@@ -12,7 +12,7 @@ import RxSwift
 class MainDaoRepository {
     
     var cryptoArray = BehaviorSubject<[Crypto]>(value: [Crypto]())
-   
+  
     func loadCrypto() {
         
         let url = URL(string:"http://data.fixer.io/api/latest?access_key=798c8fae3cd7d13011fca8fa483039f3")
@@ -60,4 +60,6 @@ class MainDaoRepository {
         }
         task.resume()
     }
+    
+    
 }
